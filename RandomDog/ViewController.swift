@@ -26,9 +26,8 @@ class ViewController: UIViewController {
         button.layer.shadowOpacity = 0.2
         button.layer.shadowOffset = CGSize(width: 4, height: 4)
         button.layer.shadowRadius = 5.0
-        button.layer.masksToBounds = false
-        button.layer.cornerRadius = 25
         button.layer.masksToBounds = true
+        button.layer.cornerRadius = 25
         return button
     }()
     
