@@ -7,6 +7,28 @@
 
 import UIKit
 
+public extension UIView {
+    func showAnimation(_ completionBlock: @escaping () -> Void) {
+      isUserInteractionEnabled = false
+        UIView.animate(withDuration: 0.1,
+                       delay: 0,
+                       options: .curveLinear,
+                       animations: { [weak self] in
+                            self?.transform = CGAffineTransform.init(scaleX: 0.95, y: 0.95)
+        }) {  (done) in
+            UIView.animate(withDuration: 0.1,
+                           delay: 0,
+                           options: .curveLinear,
+                           animations: { [weak self] in
+                                self?.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+            }) { [weak self] (_) in
+                self?.isUserInteractionEnabled = true
+                completionBlock()
+            }
+        }
+    }
+}
+
 class ViewController: UIViewController {
     
     private let imageView: UIImageView = {
@@ -15,7 +37,7 @@ class ViewController: UIViewController {
         imageView.backgroundColor = .white
         return imageView
     }()
-
+    
     private let button: UIButton = {
         let button = UIButton()
         button.backgroundColor = .white
@@ -54,14 +76,14 @@ class ViewController: UIViewController {
         imageView.layer.cornerRadius = 7
         view.addSubview(button)
         getDogPhoto()
-        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(buttonTapped(sender:)), for: .touchUpInside)
 
     }
-    
-    @objc func didTapButton() {
-        getDogPhoto()
-        
-        view.backgroundColor = colors.randomElement()
+    @objc func buttonTapped(sender: UIButton) {
+        sender.showAnimation { [self] in
+          getDogPhoto()
+          view.backgroundColor = colors.randomElement()
+      }
     }
     
     override func viewDidLayoutSubviews() {
