@@ -92,7 +92,7 @@ class ViewController: UIViewController {
     }
     
     func getDogPhoto() {
-        let urlString = "https://source.unsplash.com/random/600x800/?dog"
+        let urlString = "https://source.unsplash.com/random/450x600/?dog"
         let url = URL(string: urlString)!
         guard let data = try? Data(contentsOf: url) else {
             return
