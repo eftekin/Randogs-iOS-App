@@ -2,7 +2,7 @@
 
 ### See the cuteness of dogs wherever you want and add positivity to your life
 
-<img src="https://user-images.githubusercontent.com/75522456/183608064-df8464a5-c730-4b49-999a-a9a3cf34002a.png" width="250" height="500"> <img src="https://user-images.githubusercontent.com/75522456/183610054-45b8f078-0270-4aa4-8b02-ab04b301b02c.png" width="250" height="500"> <img src="https://user-images.githubusercontent.com/75522456/183610066-5e81840b-beca-4f53-b5e0-d74f5415fa56.png" width="250" height="500">
+<img src="https://user-images.githubusercontent.com/75522456/183618430-363bb0e8-29e3-4fba-a7d7-38b7bb2b3e59.png" width="250" height="500"> <img src="https://user-images.githubusercontent.com/75522456/183618442-d71bd7b6-1c51-4d9c-ae6c-0b26e9737372.png" width="250" height="500"> <img src="https://user-images.githubusercontent.com/75522456/183618453-54fb2c91-9361-4374-9391-afd51afa54e0.png" width="250" height="500">
 
 
 
