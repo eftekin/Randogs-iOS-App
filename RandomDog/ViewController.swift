@@ -44,13 +44,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemPink
         view.addSubview(imageView)
-        imageView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        imageView.frame = CGRect(x: 0, y: 0, width: 300, height: 400)
         imageView.center = view.center
         imageView.layer.shadowColor = UIColor.black.cgColor
         imageView.layer.shadowOpacity = 0.2
         imageView.layer.shadowOffset = CGSize(width: 4, height: 4)
         imageView.layer.shadowRadius = 5.0
-        imageView.layer.masksToBounds = false
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = 7
         view.addSubview(button)
         getDogPhoto()
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
@@ -65,11 +66,11 @@ class ViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        button.frame = CGRect(x: 30, y: view.frame.size.height-150-view.safeAreaInsets.bottom, width: view.frame.size.width-60, height: 55)
+        button.frame = CGRect(x: 30, y: view.frame.size.height-100-view.safeAreaInsets.bottom, width: view.frame.size.width-60, height: 55)
     }
     
     func getDogPhoto() {
-        let urlString = "https://source.unsplash.com/random/600x600/?dog"
+        let urlString = "https://source.unsplash.com/random/600x800/?dog"
         let url = URL(string: urlString)!
         guard let data = try? Data(contentsOf: url) else {
             return
