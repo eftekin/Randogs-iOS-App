@@ -21,11 +21,14 @@ class ViewController: UIViewController {
         button.backgroundColor = .white
         button.setTitle("Get Dog", for: .normal)
         button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOpacity = 0.2
         button.layer.shadowOffset = CGSize(width: 4, height: 4)
         button.layer.shadowRadius = 5.0
         button.layer.masksToBounds = false
+        button.layer.cornerRadius = 25
+        button.layer.masksToBounds = true
         return button
     }()
     
