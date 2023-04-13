@@ -1,4 +1,3 @@
-//
 //  ViewController.swift
 //  RandomDog
 //
@@ -9,7 +8,7 @@ import UIKit
 
 public extension UIView {
     func showAnimation(_ completionBlock: @escaping () -> Void) {
-      isUserInteractionEnabled = false
+        isUserInteractionEnabled = false
         UIView.animate(withDuration: 0.1,
                        delay: 0,
                        options: .curveLinear,
@@ -76,15 +75,20 @@ class ViewController: UIViewController {
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 7
         view.addSubview(button)
-        getDogPhoto()
+        getDogPhoto { _ in }
         button.addTarget(self, action: #selector(buttonTapped(sender:)), for: .touchUpInside)
-
     }
+
+    
     @objc func buttonTapped(sender: UIButton) {
-        sender.showAnimation { [self] in
-          getDogPhoto()
-          view.backgroundColor = colors.randomElement()
-      }
+        getDogPhoto { [weak self] success in
+            if success {
+                DispatchQueue.main.async {
+                    self?.view.backgroundColor = self?.colors.randomElement()
+                    sender.showAnimation {}
+                }
+            }
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -92,14 +96,38 @@ class ViewController: UIViewController {
         button.frame = CGRect(x: 30, y: view.frame.size.height-100-view.safeAreaInsets.bottom, width: view.frame.size.width-60, height: 55)
     }
     
-    func getDogPhoto() {
-        let urlString = "https://source.unsplash.com/random/450x600/?dog"
+    func getDogPhoto(completion: @escaping (Bool) -> Void) {
+        let urlString = "https://dog.ceo/api/breeds/image/random"
         let url = URL(string: urlString)!
-        guard let data = try? Data(contentsOf: url) else {
-            return
+        
+        let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+            guard let data = data, error == nil else {
+                completion(false)
+                return
+            }
+            
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                   let imageUrlString = json["message"] as? String,
+                   let imageUrl = URL(string: imageUrlString),
+                   let imageData = try? Data(contentsOf: imageUrl) {
+                    
+                    DispatchQueue.main.async {
+                        self?.imageView.image = UIImage(data: imageData)
+                        completion(true)
+                    }
+                } else {
+                    completion(false)
+                }
+            } catch {
+                completion(false)
+            }
         }
-        imageView.image = UIImage(data: data)
+        
+        task.resume()
     }
+
 
 }
 
+       
