@@ -1,13 +1,31 @@
-# Random Dog
+# RandomDog - iOS App
 
-### See the cuteness of dogs wherever you want and add positivity to your life
+RandomDog is a fun and simple iOS app that allows users to view random dog photos with a tap of a button. The app features a sleek and minimal design, focusing on providing an enjoyable and seamless user experience.
 
-<img src="https://user-images.githubusercontent.com/75522456/183618430-363bb0e8-29e3-4fba-a7d7-38b7bb2b3e59.png" width="390" height="844"> <img src="https://user-images.githubusercontent.com/75522456/183618442-d71bd7b6-1c51-4d9c-ae6c-0b26e9737372.png" width="390" height="844"> <img src="https://user-images.githubusercontent.com/75522456/183618453-54fb2c91-9361-4374-9391-afd51afa54e0.png" width="390" height="844"> <img src="https://user-images.githubusercontent.com/75522456/183619434-d527858a-33f2-41fa-b7a0-8df85bef0748.png" width="390" height="844">
+<img src="https://user-images.githubusercontent.com/75522456/231641221-ec4d8832-17c0-40c4-8d7f-1333d4a4eedd.png" width="300" height="649"><img src="https://user-images.githubusercontent.com/75522456/231641498-15a49830-1970-4061-899c-334aeff90e5f.png" width="300" height="649"> <img src="https://user-images.githubusercontent.com/75522456/231641554-958ba5cc-fd21-4162-9725-5832bf501399.png" width="300" height="649">
 
+## Features
 
+- Asynchronously loads random dog photos from [Dog API](https://dog.ceo/dog-api/)
+- Changes background color with each new photo
+- Smooth button animation on tap
 
+## Installation
 
-#### Support Me
+1. Clone the repository(`git clone https://github.com/yourusername/RandomDog.git`)
+2. Open `RandomDog.xcodeproj` in Xcode.
+3. Build and run the project on an iOS simulator or an actual device.
 
-<a href="https://www.buymeacoffee.com/eftekin"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=eftekin&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
+## Requirements
+
+- Xcode
+- iOS 13.0+ (may work on earlier versions, but not tested)
+
+## Contributing
+
+1. Fork the project.
+2. Create a new branch for your feature (`git checkout -b feature/my-feature`).
+3. Commit your changes (`git commit -m 'Add my feature'`).
+4. Push the branch (`git push origin feature/my-feature`).
+5. Open a pull request.
 
