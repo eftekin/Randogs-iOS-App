@@ -2,7 +2,7 @@
 
 RandomDog is a fun and simple iOS app that allows users to view random dog photos with a tap of a button. The app features a sleek and minimal design, focusing on providing an enjoyable and seamless user experience.
 
-<img src="https://user-images.githubusercontent.com/75522456/231641221-ec4d8832-17c0-40c4-8d7f-1333d4a4eedd.png" width="300" height="649"><img src="https://user-images.githubusercontent.com/75522456/231641498-15a49830-1970-4061-899c-334aeff90e5f.png" width="300" height="649"> <img src="https://user-images.githubusercontent.com/75522456/231641554-958ba5cc-fd21-4162-9725-5832bf501399.png" width="300" height="649">
+<img src="https://user-images.githubusercontent.com/75522456/231641221-ec4d8832-17c0-40c4-8d7f-1333d4a4eedd.png" width="300" height="649"><img src="https://user-images.githubusercontent.com/75522456/231641498-15a49830-1970-4061-899c-334aeff90e5f.png" width="300" height="649"> <img src="https://user-images.githubusercontent.com/75522456/231641554-958ba5cc-fd21-4162-9725-5832bf501399.png" width="300" height="649"><img src="https://user-images.githubusercontent.com/75522456/231642076-94edeb5b-d2e7-4d3d-abf8-b544b90ad791.png" width="300" height="649">
 
 ## Features
 
