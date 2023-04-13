@@ -1,4 +1,4 @@
-# RandomDog - iOS App
+# Randogs - iOS App
 
 RandomDog is a fun and simple iOS app that allows users to view random dog photos with a tap of a button. The app features a sleek and minimal design, focusing on providing an enjoyable and seamless user experience.
 
